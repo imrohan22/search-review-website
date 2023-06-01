@@ -200,7 +200,7 @@ function ProfileRating({ awardData }) {
           body: JSON.stringify(formData.formOne)
         };
 
-        await fetch('${process.env.BASE_URL}/gateway/review-website/customer/create', requestOptionsFormOne)
+        await fetch(`${process.env.BASE_URL}/gateway/review-website/customer/create`, requestOptionsFormOne)
           .then(response => response.json())
           .then(resp => {
             setUserId(resp?.payload?.customerId);
@@ -226,7 +226,7 @@ function ProfileRating({ awardData }) {
         body: JSON.stringify(data)
       };
 
-      await fetch('${process.env.BASE_URL}/gateway/review-website/customer/review/create', requestOptionsFormTwo)
+      await fetch(`${process.env.BASE_URL}/gateway/review-website/customer/review/create`, requestOptionsFormTwo)
         .then(response => response.json())
         .then(data => {
           if (data?.statusCode && data?.statusCode !== 200) {
